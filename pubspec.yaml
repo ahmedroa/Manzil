@@ -48,6 +48,8 @@ dependencies:
   flutter_svg: ^2.0.9
   flutter_svg_provider: null
   searchable_listview: ^2.15.1
+  iconly: ^1.0.1
+  google_fonts: ^6.1.0
   
  
   # Code generator (mainly used with cubit & retrofit)

@@ -19,7 +19,7 @@ class ReservationsCubit extends Cubit<ReservationsState> {
           .collection('past reservations')
           .get();
       pastReservationsList = querySnapshot.docs.map((doc) => PastReservationsModel.fromMap(doc.data())).toList();
-      emit(ReservationsState.successPast(pastReservationsList));
+      // emit(ReservationsState.successPast(pastReservationsList));
       print('success fetching past reservations');
     } catch (e) {
       emit(ReservationsState.error(e.toString()));

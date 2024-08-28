@@ -21,8 +21,6 @@ class _CurrentReservationsBlocBuilderState extends State<CurrentReservationsBloc
           builder: (context, state) {
             return state.maybeWhen(
               success: (reservationsList) {
-                // print(reservationsList);
-
                 return Column(
                   children: [
                     ListView.separated(

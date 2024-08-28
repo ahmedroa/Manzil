@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manzil/features/Reservations/logic/Reservations_cubit.dart';
 import 'package:manzil/features/Reservations/logic/reservations_state.dart';
+import 'package:manzil/features/Reservations/ui/widgets/past_reservations.dart';
 import 'package:manzil/features/home/ui/widgets/nearby_your_location/nearby_your_location_shimmer.dart';
 
 class PastReservationsBlocBuilder extends StatefulWidget {
@@ -30,8 +31,10 @@ class _PastReservationsBlocBuilderState extends State<PastReservationsBlocBuilde
                       itemCount: reservationsList.length,
                       separatorBuilder: (context, index) => const SizedBox(height: 10),
                       itemBuilder: (context, index) {
-                        return const Text('data');
-                        // return const PastReservations();
+                        // return const Text('data');
+                        return PastReservations(
+                          reservationList: reservationsList[index],
+                        );
                       },
                     ),
                   ],

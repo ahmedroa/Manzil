@@ -5,7 +5,6 @@ import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
-import 'package:manzil/core/widgets/icon.dart';
 import 'package:manzil/features/auth/logic/bloc_state.dart';
 import 'package:manzil/features/auth/ui/screen/VerificationCode.dart';
 import '../../logic/auth_cubit.dart';
@@ -90,10 +89,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
         if (state is ErrorOccurred) {
           String errorMsg = (state).errorMsg;
-
-          print('======================================');
-          print('Error: $errorMsg');
-          print('======================================');
           Navigator.pop(context);
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -111,13 +106,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Image.asset(
-          IconsManger.logo,
-          color: ColorsManager.kPrimaryColor,
-          height: 120,
-        ),
-      ),
+      appBar: AppBar(),
       body: Form(
         key: _phoneFormKey,
         child: Padding(
@@ -126,8 +115,21 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: MediaQuery.of(context).size.height * 0.4,
+                height: MediaQuery.of(context).size.height * 0.1,
               ),
+              Align(
+                alignment: Alignment.center,
+                child: Container(
+                  width: 150,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    color: ColorsManager.containerBlue,
+                    // border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(80),
+                  ),
+                ),
+              ),
+              verticalSpace(40),
               Text(
                 'Welcome',
                 style: TextStyles.fon20DarkMedium,
@@ -136,7 +138,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 'please enter your number, will send you a confrmation code',
                 style: TextStyles.fon16GreyMedium,
               ),
-              verticalSpace(20),
               verticalSpace(20),
               MainButton(
                   text: 'Send',

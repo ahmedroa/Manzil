@@ -6,8 +6,6 @@ abstract class HomeState {}
 
 class HomeInitialState extends HomeState {}
 
-class NewBottonNavlState extends HomeState {}
-
 class SuccessRecommendedState extends HomeState {
   final List<UnitModle> units;
 

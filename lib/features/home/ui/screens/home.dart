@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/icon.dart';
-import 'package:manzil/features/home/logic/cubit/home_cubit.dart';
 import 'package:manzil/features/home/ui/widgets/nearby_your_location/nearby_your_location_bloc_builder.dart';
 import 'package:manzil/features/home/ui/widgets/advertisement.dart';
 import 'package:manzil/features/home/ui/widgets/recommended/recommended_bloc_builder.dart';
+import 'package:manzil/features/BottomNavBar/logic/BottomNavCubit.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -81,7 +82,7 @@ Row nearbyYourLocation(BuildContext context) {
       const Spacer(),
       GestureDetector(
         onTap: () {
-          HomeCubit.get(context).chengeBottomNavBar(2);
+          BlocProvider.of<BottomNavCubit>(context).changeSelectedIndex(1);
         },
         child: Text(
           'See all',
