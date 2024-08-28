@@ -3,26 +3,24 @@ class UnitModle {
   final String? id;
   final String? description;
   final String? img;
-  // final List<dynamic> features;
-  // final List<String>? images;
   final String numbersOfBeds;
   final String numbersOfBathrooms;
   final String propertyArea;
   final int price;
   final String location;
+  final List<String>? picturesOfUnity;
 
   UnitModle({
     required this.name,
     this.id,
     this.description,
     this.img,
-    // required this.features,
-    // this.images,
     required this.numbersOfBeds,
     required this.numbersOfBathrooms,
     required this.propertyArea,
     required this.price,
     required this.location,
+    this.picturesOfUnity,
   });
 
   factory UnitModle.fromMap(Map<String, dynamic> map) {
@@ -31,13 +29,12 @@ class UnitModle {
       name: map['name'],
       description: map['description'],
       img: map['img'],
-      // features: List<dynamic>.from(map['features']),
-      // imgs: List<String>.from(map['imgs'] ?? []),
       numbersOfBeds: map['numbersOfBeds'],
       numbersOfBathrooms: map['numbersOfBathrooms'],
       propertyArea: map['propertyArea'],
       price: map['price'],
       location: map['location'],
+      picturesOfUnity: List<String>.from(map['picturesOfUnity'] ?? []),
     );
   }
 
@@ -47,13 +44,12 @@ class UnitModle {
       'name': name,
       'description': description,
       'img': img,
-      // 'features': features,
-      // 'images': images,
       'numbersOfBeds': numbersOfBeds,
       'numbersOfBathrooms': numbersOfBathrooms,
       'propertyArea': propertyArea,
       'price': price,
       'location': location,
+      'picturesOfUnity': picturesOfUnity,
     };
   }
 }

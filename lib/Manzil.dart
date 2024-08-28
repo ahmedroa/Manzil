@@ -29,15 +29,3 @@ class Manzil extends StatelessWidget {
     );
   }
 }
-
-// الصوره في ال details
-// السعر
-// Property Specifications
-
-
-
-// select Beds
-//title 
-// Features
-// Checkout
-//// margein

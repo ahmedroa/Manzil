@@ -39,46 +39,7 @@ class Details extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Image.asset(
-                  //   'assets/home.png',
-                  //   width: double.infinity,
-                  // ),
-                  Align(
-                      alignment: Alignment.center,
-                      child: Image.asset(
-                        'assets/home.png',
-                        fit: BoxFit.cover,
-                      )),
-                  verticalSpace(12),
-                  Row(
-                    children: [
-                      Text(
-                        unitList.name,
-                        style: TextStyles.font18DarkRegular,
-                      ),
-                      const Spacer(),
-                      const Icon(
-                        Icons.share,
-                        color: Colors.grey,
-                      )
-                    ],
-                  ),
-                  Text(
-                    unitList.location,
-                    style: TextStyles.font14blueMedium.copyWith(fontSize: 18),
-                  ),
-                  Row(
-                    children: [
-                      Text(formattedPrice, style: TextStyles.fon18DarkMedium),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text('SAR', style: TextStyles.fon10DarkRegular),
-                          Text('+ 261 SAR For VAT and processing fees', style: TextStyles.fon8GreyRegular),
-                        ],
-                      )
-                    ],
-                  ),
+                  detailsUnit(unitList: unitList, formattedPrice: formattedPrice),
                   verticalSpace(12),
                   Container(
                     height: 50,
@@ -159,161 +120,24 @@ class Details extends StatelessWidget {
                       ],
                     ),
                   ),
-                  verticalSpace(12),
-                  Text('Description', style: TextStyles.fon16DarkMedium),
-                  verticalSpace(12),
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: ColorsManager.containerColor,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(12.0),
-                      child: Text(
-                        '${unitList.description}',
-                        style: TextStyles.font14GreyRegular,
-                      ),
-                    ),
-                  ),
-                  verticalSpace(12),
-                  Row(
-                    children: [
-                      Text('Features', style: TextStyles.fon16DarkMedium),
-                      const Spacer(),
-                      GestureDetector(onTap: () {}, child: Text('See all', style: TextStyles.font14blueMedium)),
-                    ],
-                  ),
-                  verticalSpace(12),
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: ColorsManager.containerColor,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 4, bottom: 4),
-                      child: Row(
-                        children: [
-                          horizontalSpace(8),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.all(4.0),
-                              child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        SvgPicture.asset('assets/Wifi.svg'),
-                                        Text('Wi-Fi', style: TextStyles.fon14DarkMedium),
-                                        Text('+Extra Charge', style: TextStyles.fon10GreyRegular),
-                                      ],
-                                    ),
-                                  )),
-                            ),
-                          ),
-                          horizontalSpace(8),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.all(4.0),
-                              child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        SvgPicture.asset('assets/Wifi.svg'),
-                                        Text('Wi-Fi', style: TextStyles.fon14DarkMedium),
-                                        Text('+Extra Charge', style: TextStyles.fon10GreyRegular),
-                                      ],
-                                    ),
-                                  )),
-                            ),
-                          ),
-                          horizontalSpace(8),
-                          Expanded(
-                            child: Padding(
-                              padding: const EdgeInsets.all(4.0),
-                              child: Container(
-                                  decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: [
-                                        SvgPicture.asset('assets/Wifi.svg'),
-                                        Text('Wi-Fi', style: TextStyles.fon14DarkMedium),
-                                        Text('+Extra Charge', style: TextStyles.fon10GreyRegular),
-                                      ],
-                                    ),
-                                  )),
-                            ),
-                          ),
-                          horizontalSpace(8),
-                        ],
-                      ),
-                    ),
-                  ),
-                  verticalSpace(12),
+                  description(),
+                  features(),
                   Text('Photos', style: TextStyles.fon16DarkMedium),
                   verticalSpace(12),
-                  Column(
-                    children: [
-                      Container(
-                        height: 130,
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.grey[200],
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                      ),
-                      verticalSpace(10),
-                      Row(
-                        children: [
-                          Container(
-                            height: 130,
-                            width: MediaQuery.of(context).size.width * 0.29,
-                            decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                          ),
-                          horizontalSpace(12),
-                          Container(
-                            height: 130,
-                            width: MediaQuery.of(context).size.width * 0.29,
-                            decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                          ),
-                          horizontalSpace(12),
-                          Container(
-                            height: 130,
-                            width: MediaQuery.of(context).size.width * 0.29,
-                            decoration: BoxDecoration(
-                              color: Colors.grey[200],
-                              borderRadius: BorderRadius.circular(12),
-                            ),
-                          ),
-                        ],
-                      )
-                    ],
+                  SizedBox(
+                    height: 200,
+                    child: GridView.count(
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 8.0,
+                      mainAxisSpacing: 8.0,
+                      children: List.generate(unitList.picturesOfUnity?.length ?? 0, (index) {
+                        return Image.network(
+                          unitList.picturesOfUnity![index],
+                          fit: BoxFit.cover,
+                        );
+                      }),
+                    ),
                   ),
-                  verticalSpace(12),
-                  // Text('Property Specifications', style: TextStyles.fon16DarkMedium),
                   verticalSpace(12),
                   propertySpecifications(context)
                 ],
@@ -349,6 +173,176 @@ class Details extends StatelessWidget {
           ],
         ),
       )),
+    );
+  }
+
+  Column features() {
+    return Column(
+      children: [
+        Row(
+          children: [
+            Text('Features', style: TextStyles.fon16DarkMedium),
+            const Spacer(),
+            GestureDetector(onTap: () {}, child: Text('See all', style: TextStyles.font14blueMedium)),
+          ],
+        ),
+        verticalSpace(12),
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: ColorsManager.containerColor,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.only(top: 4, bottom: 4),
+            child: Row(
+              children: [
+                horizontalSpace(8),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SvgPicture.asset('assets/Wifi.svg'),
+                              Text('Wi-Fi', style: TextStyles.fon14DarkMedium),
+                              Text('+Extra Charge', style: TextStyles.fon10GreyRegular),
+                            ],
+                          ),
+                        )),
+                  ),
+                ),
+                horizontalSpace(8),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SvgPicture.asset('assets/Wifi.svg'),
+                              Text('Wi-Fi', style: TextStyles.fon14DarkMedium),
+                              Text('+Extra Charge', style: TextStyles.fon10GreyRegular),
+                            ],
+                          ),
+                        )),
+                  ),
+                ),
+                horizontalSpace(8),
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(4.0),
+                    child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SvgPicture.asset('assets/Wifi.svg'),
+                              Text('Wi-Fi', style: TextStyles.fon14DarkMedium),
+                              Text('+Extra Charge', style: TextStyles.fon10GreyRegular),
+                            ],
+                          ),
+                        )),
+                  ),
+                ),
+                horizontalSpace(8),
+              ],
+            ),
+          ),
+        ),
+        verticalSpace(12),
+      ],
+    );
+  }
+
+  Column description() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        verticalSpace(12),
+        Text('Description', style: TextStyles.fon16DarkMedium),
+        verticalSpace(12),
+        Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: ColorsManager.containerColor,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Text(
+              '${unitList.description}',
+              style: TextStyles.font14GreyRegular,
+            ),
+          ),
+        ),
+        verticalSpace(12),
+      ],
+    );
+  }
+
+  detailsUnit({required UnitModle unitList, required String formattedPrice}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Align(
+            alignment: Alignment.center,
+            child: Image.asset(
+              'assets/home.png',
+              fit: BoxFit.cover,
+            )),
+        verticalSpace(12),
+        Row(
+          children: [
+            Text(
+              unitList.name,
+              style: TextStyles.font18BluekRegular,
+            ),
+            const Spacer(),
+            const Icon(
+              Icons.share,
+              color: Colors.grey,
+            )
+          ],
+        ),
+        Text(
+          unitList.location,
+          style: TextStyles.font14GreyRegular,
+
+          // style: TextStyles.font14blueMedium.copyWith(fontSize: 18),
+        ),
+        verticalSpace(4),
+        Row(
+          children: [
+            Text(formattedPrice, style: TextStyles.fon18DarkMedium),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('SAR', style: TextStyles.fon10DarkRegular),
+                Text('+ 261 SAR For VAT and processing fees', style: TextStyles.fon8GreyRegular),
+              ],
+            )
+          ],
+        ),
+      ],
     );
   }
 

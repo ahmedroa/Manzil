@@ -40,7 +40,7 @@ class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMi
             children: [
               const Advertisement(),
               verticalSpace(10),
-              recommendedForYouSeeAll(),
+              recommendedForYouSeeAll(context),
               verticalSpace(10),
               const RecommendedBlocBuilder(),
               verticalSpace(20),
@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMi
   }
 }
 
-Row recommendedForYouSeeAll() {
+Row recommendedForYouSeeAll(BuildContext context) {
   return Row(
     children: [
       Text(
@@ -64,9 +64,14 @@ Row recommendedForYouSeeAll() {
         style: TextStyles.fon18DarkMedium,
       ),
       const Spacer(),
-      Text(
-        'See all',
-        style: TextStyles.font14blueMedium,
+      GestureDetector(
+        onTap: () {
+          BlocProvider.of<BottomNavCubit>(context).changeSelectedIndex(1);
+        },
+        child: Text(
+          'See all',
+          style: TextStyles.font14blueMedium,
+        ),
       ),
     ],
   );

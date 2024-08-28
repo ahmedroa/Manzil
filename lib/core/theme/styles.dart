@@ -82,9 +82,13 @@ class TextStyles {
 
   static TextStyle font18DarkRegular = const TextStyle(
     fontSize: 18,
-    // fontSize: 18.sp,
     fontWeight: FontWeightHelper.regular,
     color: Colors.black,
+  );
+  static TextStyle font18BluekRegular = const TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeightHelper.regular,
+    color: ColorsManager.kPrimaryColor,
   );
   static TextStyle fon12GreyRegular = const TextStyle(
     fontSize: 12,
