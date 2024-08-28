@@ -9,6 +9,10 @@ import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 import 'package:manzil/features/home/data/model/unit.dart';
+import 'package:manzil/features/home/ui/widgets/photo_view_screen.dart';
+import 'package:manzil/features/home/ui/widgets/photos.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 
 class Details extends StatelessWidget {
   final UnitModle unitList;
@@ -122,23 +126,8 @@ class Details extends StatelessWidget {
                   ),
                   description(),
                   features(),
-                  Text('Photos', style: TextStyles.fon16DarkMedium),
-                  verticalSpace(12),
-                  SizedBox(
-                    height: 200,
-                    child: GridView.count(
-                      crossAxisCount: 3,
-                      crossAxisSpacing: 8.0,
-                      mainAxisSpacing: 8.0,
-                      children: List.generate(unitList.picturesOfUnity?.length ?? 0, (index) {
-                        return Image.network(
-                          unitList.picturesOfUnity![index],
-                          fit: BoxFit.cover,
-                        );
-                      }),
-                    ),
-                  ),
-                  verticalSpace(12),
+                  Photos(unitList: unitList),
+                  // verticalSpace(12),
                   propertySpecifications(context)
                 ],
               ),
@@ -304,11 +293,9 @@ class Details extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Align(
-            alignment: Alignment.center,
-            child: Image.asset(
-              'assets/home.png',
-              fit: BoxFit.cover,
-            )),
+          alignment: Alignment.center,
+          child: Image.network('${unitList.img}'),
+        ),
         verticalSpace(12),
         Row(
           children: [

@@ -50,6 +50,7 @@ dependencies:
   searchable_listview: ^2.15.1
   iconly: ^1.0.1
   google_fonts: ^6.1.0
+  photo_view: ^0.15.0
   
  
   # Code generator (mainly used with cubit & retrofit)
