@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/features/home/data/model/unit.dart';
-import 'package:manzil/features/home/ui/widgets/photo_view_screen.dart';
+import 'package:manzil/features/details/ui/screens/photo_view_screen.dart';
 
 class Photos extends StatelessWidget {
   const Photos({super.key, required this.unitList});

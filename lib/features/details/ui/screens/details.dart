@@ -9,7 +9,7 @@ import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 import 'package:manzil/features/home/data/model/unit.dart';
-import 'package:manzil/features/home/ui/widgets/photos.dart';
+import 'package:manzil/features/details/ui/widgets/photos.dart';
 
 class Details extends StatelessWidget {
   final UnitModle unitList;
@@ -142,7 +142,7 @@ class Details extends StatelessWidget {
                         'Price / per bed',
                         style: TextStyles.font14GreyMedium,
                       ),
-                      Text('1,999', style: TextStyles.fon18DarkMedium),
+                      Text('$formattedPrice SAR Monthly', style: TextStyles.fon18DarkSemiBold),
                     ],
                   ),
                   const Spacer(),

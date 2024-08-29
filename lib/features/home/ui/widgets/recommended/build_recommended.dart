@@ -6,7 +6,7 @@ import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
 import 'package:manzil/features/home/data/model/unit.dart';
-import 'package:manzil/features/home/ui/screens/details.dart';
+import 'package:manzil/features/details/ui/screens/details.dart';
 
 class BuildRecommended extends StatelessWidget {
   final UnitModle unitList;
