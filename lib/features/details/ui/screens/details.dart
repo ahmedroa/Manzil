@@ -291,7 +291,15 @@ class Details extends StatelessWidget {
       children: [
         Align(
           alignment: Alignment.center,
-          child: Image.network('${unitList.img}'),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.network(
+              '${unitList.img}',
+              width: double.infinity,
+              height: 300,
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
         verticalSpace(12),
         Row(

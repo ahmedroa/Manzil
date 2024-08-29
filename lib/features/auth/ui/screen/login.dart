@@ -151,13 +151,11 @@ class _LoginScreenState extends State<LoginScreen> {
         }
 
         if (state is PhoneNumberSubmited) {
-          print('Success');
           Navigator.pop(context);
           context.pushNamed(Routes.otpScreen, arguments: phoneNumber);
         }
 
         if (state is ErrorOccurred) {
-          print(state.errorMsg);
           String errorMsg = (state).errorMsg;
           Navigator.pop(context);
           ScaffoldMessenger.of(context).showSnackBar(

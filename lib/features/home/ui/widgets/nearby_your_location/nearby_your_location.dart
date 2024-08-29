@@ -38,11 +38,20 @@ class NearbyYourLocation extends StatelessWidget {
         ),
         child: Row(
           children: [
-            Image.asset(
-              'assets/home.png',
-              width: 70,
-              height: 70,
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.network(
+                '${unitList.img}',
+                width: 70,
+                height: 70,
+                fit: BoxFit.cover,
+              ),
             ),
+            // Image.asset(
+            //   'assets/home.png',
+            //   width: 70,
+            //   height: 70,
+            // ),
             horizontalSpace(15),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
