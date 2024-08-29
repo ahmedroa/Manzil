@@ -6,7 +6,7 @@ import 'package:manzil/features/Checkout/ui/screens/checkout.dart';
 import 'package:manzil/features/auth/logic/auth_cubit.dart';
 import 'package:manzil/features/auth/ui/screen/VerificationCode.dart';
 import 'package:manzil/features/auth/ui/screen/login.dart';
-import 'package:manzil/features/details/ui/screens/select_beds.dart';
+import 'package:manzil/features/home/ui/screens/select_beds.dart';
 import 'package:manzil/features/BottomNavBar/widget/bottom_navigation_bar.dart';
 import 'package:manzil/features/setting/ui/screens/FollowUs.dart';
 import 'package:manzil/features/setting/ui/screens/Language.dart';
