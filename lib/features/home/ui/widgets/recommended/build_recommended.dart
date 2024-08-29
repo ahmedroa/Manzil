@@ -44,13 +44,19 @@ class BuildRecommended extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: const BorderRadius.all(Radius.circular(10)),
-                child: Image.asset(
-                  'assets/home.png',
+                child: Image.network(
+                  '${unitList.img}',
                   width: double.infinity,
                   height: 230,
                   fit: BoxFit.cover,
                 ),
               ),
+
+              // CachedNetworkImage(
+              //   imageUrl: "http://via.placeholder.com/350x150",
+              //   placeholder: (context, url) => const CircularProgressIndicator(),
+              //   errorWidget: (context, url, error) => const Icon(Icons.error),
+              // ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(

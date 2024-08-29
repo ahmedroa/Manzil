@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:photo_view/photo_view_gallery.dart';

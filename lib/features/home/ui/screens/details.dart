@@ -9,10 +9,7 @@ import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 import 'package:manzil/features/home/data/model/unit.dart';
-import 'package:manzil/features/home/ui/widgets/photo_view_screen.dart';
 import 'package:manzil/features/home/ui/widgets/photos.dart';
-import 'package:photo_view/photo_view.dart';
-import 'package:photo_view/photo_view_gallery.dart';
 
 class Details extends StatelessWidget {
   final UnitModle unitList;

@@ -18,3 +18,11 @@ void main() async {
     appRouter: AppRouter(),
   ));
 }
+// logo 
+// splash screen
+// otp verification
+// reservation
+// loading image
+// loading photos from firebase
+// apple pay ?? andorid  *
+// animation

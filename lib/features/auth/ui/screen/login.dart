@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:manzil/core/helpers/extensions.dart';
 import 'package:manzil/core/helpers/spacing.dart';
+import 'package:manzil/core/routing/app_router.dart';
 import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
 import 'package:manzil/features/auth/logic/bloc_state.dart';
-import 'package:manzil/features/auth/ui/screen/VerificationCode.dart';
 import '../../logic/auth_cubit.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -18,6 +19,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final GlobalKey<FormState> _phoneFormKey = GlobalKey();
+
   late String phoneNumber;
 
   String generateCountryFlag() {
@@ -31,11 +33,87 @@ class _LoginScreenState extends State<LoginScreen> {
     return flag;
   }
 
+  _buildPhoneFormField() => Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 70,
+            height: 48,
+            decoration: BoxDecoration(
+              color: const Color(0xffF3F4F6),
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(6),
+                bottomLeft: Radius.circular(6),
+              ),
+              border: Border.all(color: Colors.grey),
+            ),
+            child: Center(
+              child: Text(
+                '+966 ${generateCountryFlag()}',
+                style: TextStyles.fon16DarkMedium,
+              ),
+            ),
+          ),
+          Expanded(
+            child: TextFormField(
+              onChanged: (value) {
+                phoneNumber = value;
+              },
+              textAlign: TextAlign.start,
+              obscureText: false,
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please enter yout phone number!';
+                } else if (value.length < 9) {
+                  return 'Too short for a phone number!';
+                }
+                return null;
+              },
+              decoration: const InputDecoration(
+                counter: SizedBox(),
+                isDense: true,
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: ColorsManager.kPrimaryColor,
+                    width: 1.3,
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.grey,
+                    ),
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(6),
+                      bottomRight: Radius.circular(6),
+                    )),
+                errorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.red,
+                    width: 1.3,
+                  ),
+                ),
+                focusedErrorBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.red,
+                    width: 1.3,
+                  ),
+                ),
+                hintText: '512345678',
+                helperStyle: TextStyle(color: Color(0xffA2A2A2)),
+                fillColor: Colors.white,
+                filled: true,
+              ),
+            ),
+          ),
+        ],
+      );
+
   Future<void> _register(context) async {
     if (!_phoneFormKey.currentState!.validate()) {
       Navigator.pop(context);
       return;
     } else {
+      Navigator.pop(context);
       _phoneFormKey.currentState!.save();
       BlocProvider.of<PhoneAuthCubit>(context).submitPhoneNumber(phoneNumber);
     }
@@ -73,21 +151,13 @@ class _LoginScreenState extends State<LoginScreen> {
         }
 
         if (state is PhoneNumberSubmited) {
+          print('Success');
           Navigator.pop(context);
-          // context.pushNamed(Routes.otpScreen, arguments: phoneNumber);
-          // navigateTo(context, OtpScreen(phoneNumber: phoneNumber));
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => BlocProvider(
-                create: (context) => PhoneAuthCubit(),
-                child: OtpScreen(phoneNumber: phoneNumber),
-              ),
-            ),
-          );
+          context.pushNamed(Routes.otpScreen, arguments: phoneNumber);
         }
 
         if (state is ErrorOccurred) {
+          print(state.errorMsg);
           String errorMsg = (state).errorMsg;
           Navigator.pop(context);
           ScaffoldMessenger.of(context).showSnackBar(
@@ -139,6 +209,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 style: TextStyles.fon16GreyMedium,
               ),
               verticalSpace(20),
+              _buildPhoneFormField(),
+              verticalSpace(20),
               MainButton(
                   text: 'Send',
                   onTap: () async {
@@ -148,7 +220,9 @@ class _LoginScreenState extends State<LoginScreen> {
               Align(
                   alignment: Alignment.center,
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.pushNamed(Routes.bottomNavBar);
+                      },
                       child: Text(
                         'Continue as guest',
                         style: TextStyles.font14blueSemiBold,

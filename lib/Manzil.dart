@@ -23,7 +23,7 @@ class Manzil extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: lightTheme,
-        initialRoute: Routes.bottomNavBar,
+        initialRoute: Routes.loginScreen,
         onGenerateRoute: appRouter.generateRoute,
       ),
     );
