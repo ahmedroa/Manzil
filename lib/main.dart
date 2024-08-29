@@ -22,6 +22,8 @@ void main() async {
 // Add id unit in collection + model
 // splash screen
 // otp verification
+// seraach Browse 
+// past Reservation
 // reservation
 // loading image
 // loading photos from firebase

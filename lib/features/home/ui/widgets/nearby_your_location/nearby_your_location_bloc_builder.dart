@@ -23,6 +23,7 @@ class _NearbyYourLocationBlocBuilderState extends State<NearbyYourLocationBlocBu
           return const NearbyYourLocationShimmer();
         } else if (state is SuccessRecommendedState) {
           final displayedUnits = showAll ? state.units : state.units.take(2).toList();
+
           return ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),

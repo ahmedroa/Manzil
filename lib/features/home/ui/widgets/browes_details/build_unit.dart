@@ -42,12 +42,21 @@ class BuildUnit extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Image.asset(
-                'assets/home.png',
-                width: double.infinity,
-                height: 230,
-                fit: BoxFit.cover,
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.network(
+                  '${unitList.img}',
+                  width: double.infinity,
+                  height: 230,
+                  fit: BoxFit.cover,
+                ),
               ),
+              // Image.asset(
+              //   'assets/home.png',
+              //   width: double.infinity,
+              //   height: 230,
+              //   fit: BoxFit.cover,
+              // ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
