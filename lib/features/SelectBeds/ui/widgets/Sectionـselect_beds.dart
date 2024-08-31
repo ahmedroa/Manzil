@@ -43,7 +43,7 @@ class _SelectRoomState extends State<SelectRoom> {
                     },
                     child: AnimatedContainer(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      duration: const Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 500),
                       curve: Curves.easeInOut,
                       decoration: BoxDecoration(
                         border: Border(
@@ -74,7 +74,7 @@ class _SelectRoomState extends State<SelectRoom> {
                     },
                     child: AnimatedContainer(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      duration: const Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 500),
                       curve: Curves.easeInOut,
                       decoration: BoxDecoration(
                         border: Border(
@@ -105,7 +105,7 @@ class _SelectRoomState extends State<SelectRoom> {
                     },
                     child: AnimatedContainer(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                      duration: const Duration(milliseconds: 200),
+                      duration: const Duration(milliseconds: 500),
                       curve: Curves.easeInOut,
                       decoration: BoxDecoration(
                         border: Border(

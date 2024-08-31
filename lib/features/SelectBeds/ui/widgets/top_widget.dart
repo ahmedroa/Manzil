@@ -1,19 +1,17 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/widgets/icon.dart';
 
-class BottomWidget extends StatefulWidget {
-  const BottomWidget({super.key});
+class TopWidget extends StatefulWidget {
+  const TopWidget({super.key});
 
   @override
-  State<BottomWidget> createState() => _BottomWidgetState();
+  State<TopWidget> createState() => _TopWidgetState();
 }
 
-class _BottomWidgetState extends State<BottomWidget> {
+class _TopWidgetState extends State<TopWidget> {
   bool containerColor = false;
 
   @override
@@ -50,7 +48,7 @@ class _BottomWidgetState extends State<BottomWidget> {
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: SvgPicture.asset(
-                          IconsManger.bottom,
+                          IconsManger.top,
                           color: containerColor ? Colors.white : ColorsManager.kPrimaryColor,
                           height: 30,
                         ),
@@ -68,7 +66,7 @@ class _BottomWidgetState extends State<BottomWidget> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SvgPicture.asset(
-                        IconsManger.bottom,
+                        IconsManger.top,
                         color: Colors.white,
                         height: 30,
                       ),
@@ -93,7 +91,7 @@ class _BottomWidgetState extends State<BottomWidget> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SvgPicture.asset(
-                            IconsManger.bottom,
+                            IconsManger.top,
                             height: 30,
                           ),
                         ),
@@ -109,7 +107,7 @@ class _BottomWidgetState extends State<BottomWidget> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: SvgPicture.asset(
-                            IconsManger.bottom,
+                            IconsManger.top,
                             height: 30,
                           ),
                         ),
@@ -127,7 +125,7 @@ class _BottomWidgetState extends State<BottomWidget> {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: SvgPicture.asset(
-                        IconsManger.bottom,
+                        IconsManger.top,
                         color: Colors.white,
                         height: 30,
                       ),
@@ -147,7 +145,7 @@ class _BottomWidgetState extends State<BottomWidget> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: SvgPicture.asset(
-                    IconsManger.bottom,
+                    IconsManger.top,
                     color: Colors.white,
                     height: 30,
                   ),
