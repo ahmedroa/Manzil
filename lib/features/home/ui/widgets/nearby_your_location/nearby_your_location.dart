@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:manzil/core/helpers/navigate.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
+import 'package:manzil/features/SelectBeds/logic/cubit/select_beds_cubit.dart';
+import 'package:manzil/features/SelectBeds/ui/screens/select_beds.dart';
 import 'package:manzil/features/home/data/model/unit.dart';
 import 'package:manzil/features/home/ui/screens/details.dart';
 
@@ -86,7 +89,16 @@ class NearbyYourLocation extends StatelessWidget {
               child: MainButton(
                 width: 90,
                 text: 'Reseve',
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => BlocProvider(
+                          create: (context) => SelectBedsCubit()..getBeds(unitList.id!),
+                          child: const SelectBeds(),
+                        ),
+                      ));
+                },
               ),
             )
           ],

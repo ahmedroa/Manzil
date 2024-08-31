@@ -1,4 +1,4 @@
-class SelectBeds {
+class SelectBedsModel {
   final bool oneBed;
   final bool twoBed;
   final bool threeBed;
@@ -6,7 +6,7 @@ class SelectBeds {
   final bool fiveBed;
   final bool sixBed;
 
-  SelectBeds(
+  SelectBedsModel(
       {required this.oneBed,
       required this.twoBed,
       required this.threeBed,
@@ -14,8 +14,8 @@ class SelectBeds {
       required this.fiveBed,
       required this.sixBed});
 
-  factory SelectBeds.fromMap(Map<String, dynamic> map) {
-    return SelectBeds(
+  factory SelectBedsModel.fromMap(Map<String, dynamic> map) {
+    return SelectBedsModel(
       oneBed: map['oneBed'],
       twoBed: map['twoBed'],
       threeBed: map['threeBed'],

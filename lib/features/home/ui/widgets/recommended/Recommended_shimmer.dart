@@ -10,10 +10,8 @@ class RecommendedShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 16.h),
       child: Row(
         children: [
-          horizontalSpace(16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -22,7 +20,6 @@ class RecommendedShimmer extends StatelessWidget {
                   baseColor: ColorsManager.lightGray,
                   highlightColor: Colors.white,
                   child: Container(
-                    width: 338.w,
                     height: 180.h,
                     decoration: BoxDecoration(
                       shape: BoxShape.rectangle,

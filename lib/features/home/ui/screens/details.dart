@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
-import 'package:manzil/core/helpers/extensions.dart';
 import 'package:manzil/core/helpers/spacing.dart';
-import 'package:manzil/core/routing/app_router.dart';
 import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
 import 'package:manzil/core/widgets/goBack.dart';
+import 'package:manzil/features/SelectBeds/logic/cubit/select_beds_cubit.dart';
+import 'package:manzil/features/SelectBeds/ui/screens/select_beds.dart';
 import 'package:manzil/features/home/data/model/unit.dart';
 import 'package:manzil/features/home/ui/widgets/photos.dart';
 
@@ -149,7 +150,19 @@ class Details extends StatelessWidget {
                   MainButton(
                     text: 'Reseve',
                     onTap: () {
-                      context.pushNamed(Routes.selectBeds);
+                      // context.pushNamed(Routes.selectBeds, arguments: unitList.id);
+                      //                   if (unitList.id != null && unitList.id!.isNotEmpty) {
+                      // SelectBedsCubit()..getBeds(unitList.id!);
+// }
+
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BlocProvider(
+                              create: (context) => SelectBedsCubit()..getBeds(unitList.id!),
+                              child: const SelectBeds(),
+                            ),
+                          ));
                     },
                     width: 120,
                   ),

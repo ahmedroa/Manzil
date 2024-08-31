@@ -23,7 +23,6 @@ class _NearbyYourLocationBlocBuilderState extends State<NearbyYourLocationBlocBu
           return const NearbyYourLocationShimmer();
         } else if (state is SuccessRecommendedState) {
           final displayedUnits = showAll ? state.units : state.units.take(2).toList();
-
           return ListView.separated(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
@@ -45,46 +44,3 @@ class _NearbyYourLocationBlocBuilderState extends State<NearbyYourLocationBlocBu
     );
   }
 }
-
-
-
-  // return Column(
-    //   children: [
-    //     BlocBuilder<HomeCubit, HomeState>(
-    //       builder: (context, state) {
-    //         return state.maybeWhen(
-    //           success: (units) {
-    //             final displayedUnits = showAll ? units : units.take(2).toList();
-    //             return const NearbyYourLocationShimmer();
-
-    //             return Column(
-    //               children: [
-    //                 ListView.separated(
-    //                   physics: const NeverScrollableScrollPhysics(),
-    //                   shrinkWrap: true,
-    //                   itemCount: displayedUnits.length,
-    //                   separatorBuilder: (context, index) => const SizedBox(height: 10),
-    //                   itemBuilder: (context, index) {
-    //                     return NearbyYourLocation(
-    //                       unitList: displayedUnits[index],
-    //                     );
-    //                   },
-    //                 ),
-    //               ],
-    //             );
-    //           },
-    //           error: (message) {
-    //             return Center(child: Text('Error: $message'));
-    //           },
-    //           loading: () {
-    //             return const NearbyYourLocationShimmer();
-
-    //           },
-    //           orElse: () {
-    //             return const NearbyYourLocationShimmer();
-    //           },
-    //         );
-    //       },
-    //     ),
-    //   ],
-    // );

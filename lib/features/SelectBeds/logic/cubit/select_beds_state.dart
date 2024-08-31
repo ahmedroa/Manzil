@@ -5,9 +5,9 @@ abstract class SelectBedsState {}
 class SelectBedsInitialState extends SelectBedsState {}
 
 class SuccessState extends SelectBedsState {
-  final List<SelectBeds> beds;
+  // final List<SelectBeds> beds;
 
-  SuccessState(this.beds);
+  // SuccessState(this.beds);
 }
 
 class LoadingSelectBedsStateState extends SelectBedsState {}

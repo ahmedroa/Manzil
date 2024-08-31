@@ -31,3 +31,5 @@ void main() async {
 // loading photos from firebase
 // apple pay ?? andorid  *
 // animation
+// card_swiper
+// Exception internet

@@ -3,10 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manzil/core/routing/app_router.dart';
 import 'package:manzil/features/Checkout/logic/Checkout_cubit.dart';
 import 'package:manzil/features/Checkout/ui/screens/checkout.dart';
+import 'package:manzil/features/SelectBeds/logic/cubit/select_beds_cubit.dart';
 import 'package:manzil/features/auth/logic/auth_cubit.dart';
 import 'package:manzil/features/auth/ui/screen/VerificationCode.dart';
 import 'package:manzil/features/auth/ui/screen/login.dart';
-import 'package:manzil/features/home/ui/screens/select_beds.dart';
+import 'package:manzil/features/SelectBeds/ui/screens/select_beds.dart';
 import 'package:manzil/features/BottomNavBar/widget/bottom_navigation_bar.dart';
 import 'package:manzil/features/setting/ui/screens/FollowUs.dart';
 import 'package:manzil/features/setting/ui/screens/Language.dart';
@@ -49,7 +50,10 @@ class AppRouter {
         );
       case Routes.selectBeds:
         return MaterialPageRoute(
-          builder: (_) => const SelectBeds(),
+          builder: (_) => BlocProvider(
+            create: (context) => SelectBedsCubit()..getBeds(''),
+            child: const SelectBeds(),
+          ),
         );
 
       case Routes.myProfile:

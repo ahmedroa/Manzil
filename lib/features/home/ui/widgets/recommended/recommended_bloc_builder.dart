@@ -19,15 +19,13 @@ class RecommendedBlocBuilder extends StatelessWidget {
           return const RecommendedShimmer();
         } else if (state is SuccessRecommendedState) {
           final displayedUnits = showAll ? state.units : state.units.take(2).toList();
+
           return SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 6),
-              child: Row(
-                children: List.generate(displayedUnits.length, (index) {
-                  return BuildRecommended(unitList: state.units[index]);
-                }),
-              ),
+            child: Row(
+              children: List.generate(displayedUnits.length, (index) {
+                return BuildRecommended(unitList: state.units[index]);
+              }),
             ),
           );
         } else if (state is ErrorRecommendedState) {
