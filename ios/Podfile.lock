@@ -1211,6 +1211,8 @@ PODS:
     - nanopb (~> 3.30910.0)
   - FirebaseSharedSwift (11.0.0)
   - Flutter (1.0.0)
+  - flutter_native_splash (0.0.1):
+    - Flutter
   - GoogleUtilities/AppDelegateSwizzler (8.0.1):
     - GoogleUtilities/Environment
     - GoogleUtilities/Logger
@@ -1345,6 +1347,7 @@ DEPENDENCIES:
   - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
+  - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
   - sqflite (from `.symlinks/plugins/sqflite/darwin`)
@@ -1380,6 +1383,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/firebase_core/ios"
   Flutter:
     :path: Flutter
+  flutter_native_splash:
+    :path: ".symlinks/plugins/flutter_native_splash/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/darwin"
   shared_preferences_foundation:
@@ -1404,6 +1409,7 @@ SPEC CHECKSUMS:
   FirebaseFirestoreInternal: 9fcc0ccb987ab73163f2249444e4bfd9eac63748
   FirebaseSharedSwift: 9d0e7130af2f0cf162ecd136971f9661f2a3f769
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  flutter_native_splash: edf599c81f74d093a4daf8e17bd7a018854bc778
   GoogleUtilities: 52f677b52b0d2bed24e7b9c94455b1f7353a09f8
   "gRPC-C++": 049b3605db691c85d65fbde5b0750b5f54ce9b26
   gRPC-Core: d1716d28c3f432b4543bce193e3d7178d59341ef
