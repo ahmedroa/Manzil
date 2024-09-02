@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -42,7 +44,6 @@ class _PaymentOptionsState extends State<PaymentOptions> {
             onChanged: (value) {
               setState(() {
                 cubit.selectedOption = value!;
-                // BlocProvider.of<CheckoutCubit>(context).updateSelectedOption(value!); // تحديث القيمة عبر الكوبيت
               });
             },
           ),
@@ -124,9 +125,8 @@ class _PaymentOptionsState extends State<PaymentOptions> {
               )
             ],
           ),
-        verticalSpace(20),
-        verticalSpace(20),
-        if (cubit.selectedOption == 1) const ApplePay(),
+        verticalSpace(40),
+        if (cubit.selectedOption == 1 || Platform.isIOS) const ApplePay(),
         if (cubit.selectedOption == 2)
           MainButton(
             text: 'proceed to payment',

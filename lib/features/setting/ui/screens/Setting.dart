@@ -15,61 +15,63 @@ class Setting extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const AppBarSetting(),
-        buildOption(
-          title: 'My profile',
-          icon: IconsManger.afferent,
-          onTap: () {
-            context.pushNamed(Routes.myProfile);
-          },
-        ),
-        const Divider(),
-        buildOption(
-          title: 'Terms and conditions',
-          icon: IconsManger.afferent,
-          onTap: () {
-            context.pushNamed(Routes.termsAndConditions);
-            navigateTo(context, const TermsAndConditions());
-          },
-        ),
-        const Divider(),
-        buildOption(
-          title: 'Language',
-          icon: IconsManger.afferent,
-          onTap: () {
-            context.pushNamed(Routes.language);
-          },
-        ),
-        const Divider(),
-        buildOption(
-          title: 'Follow us',
-          icon: IconsManger.afferent,
-          onTap: () {
-            context.pushNamed(Routes.followUs);
-          },
-        ),
-        const Divider(),
-        buildOption(
-          title: 'Contact us',
-          icon: IconsManger.afferent,
-          onTap: () {},
-        ),
-        const Divider(),
-        buildOption(
-          title: 'Log out',
-          icon: IconsManger.afferent,
-          onTap: () {
-            logoutWidget(context);
-          },
-        ),
-        verticalSpace(20),
-        TextButton(
-          onPressed: () {},
-          child: Text('Delete Account', style: TextStyles.font15RedMedium),
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          const AppBarSetting(),
+          buildOption(
+            title: 'My profile',
+            icon: IconsManger.afferent,
+            onTap: () {
+              context.pushNamed(Routes.myProfile);
+            },
+          ),
+          const Divider(),
+          buildOption(
+            title: 'Terms and conditions',
+            icon: IconsManger.afferent,
+            onTap: () {
+              context.pushNamed(Routes.termsAndConditions);
+              navigateTo(context, const TermsAndConditions());
+            },
+          ),
+          const Divider(),
+          buildOption(
+            title: 'Language',
+            icon: IconsManger.afferent,
+            onTap: () {
+              context.pushNamed(Routes.language);
+            },
+          ),
+          const Divider(),
+          buildOption(
+            title: 'Follow us',
+            icon: IconsManger.afferent,
+            onTap: () {
+              context.pushNamed(Routes.followUs);
+            },
+          ),
+          const Divider(),
+          buildOption(
+            title: 'Contact us',
+            icon: IconsManger.afferent,
+            onTap: () {},
+          ),
+          const Divider(),
+          buildOption(
+            title: 'Log out',
+            icon: IconsManger.afferent,
+            onTap: () {
+              logoutWidget(context);
+            },
+          ),
+          verticalSpace(20),
+          TextButton(
+            onPressed: () {},
+            child: Text('Delete Account', style: TextStyles.font15RedMedium),
+          ),
+        ],
+      ),
     );
   }
 

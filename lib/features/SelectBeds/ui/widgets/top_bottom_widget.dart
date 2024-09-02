@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/icon.dart';
+import 'package:manzil/features/SelectBeds/logic/cubit/select_beds_cubit.dart';
 import 'package:manzil/features/SelectBeds/ui/widgets/bottom_widget.dart';
 import 'package:manzil/features/SelectBeds/ui/widgets/top_widget.dart';
 
@@ -15,10 +17,10 @@ class TopBottomWidget extends StatefulWidget {
 }
 
 class _TopBottomWidgetState extends State<TopBottomWidget> {
-  String selectedItem = 'Bottom';
-
   @override
   Widget build(BuildContext context) {
+    var cubit = BlocProvider.of<SelectBedsCubit>(context);
+
     return Column(
       children: [
         Container(
@@ -30,7 +32,7 @@ class _TopBottomWidgetState extends State<TopBottomWidget> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    selectedItem = 'Bottom';
+                    cubit.selectBed('bottom');
                   });
                 },
                 child: Padding(
@@ -42,7 +44,8 @@ class _TopBottomWidgetState extends State<TopBottomWidget> {
                       borderRadius: BorderRadius.circular(6),
                       border: Border.all(
                         width: 1,
-                        color: selectedItem == 'Bottom' ? ColorsManager.kPrimaryColor : ColorsManager.containerColor,
+                        color:
+                            cubit.selectedBeds == 'bottom' ? ColorsManager.kPrimaryColor : ColorsManager.containerColor,
                       ),
                     ),
                     child: Padding(
@@ -55,7 +58,7 @@ class _TopBottomWidgetState extends State<TopBottomWidget> {
                           ),
                           horizontalSpace(10),
                           Text(
-                            'Bottom',
+                            'bottom',
                             style: TextStyles.fon12DarkRegular,
                           ),
                         ],
@@ -67,7 +70,7 @@ class _TopBottomWidgetState extends State<TopBottomWidget> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    selectedItem = 'Top';
+                    cubit.selectBed('top');
                   });
                 },
                 child: Padding(
@@ -79,7 +82,7 @@ class _TopBottomWidgetState extends State<TopBottomWidget> {
                       borderRadius: BorderRadius.circular(6),
                       border: Border.all(
                         width: 1,
-                        color: selectedItem == 'Top' ? ColorsManager.kPrimaryColor : ColorsManager.containerColor,
+                        color: cubit.selectedBeds == 'top' ? ColorsManager.kPrimaryColor : ColorsManager.containerColor,
                       ),
                     ),
                     child: Padding(
@@ -110,30 +113,10 @@ class _TopBottomWidgetState extends State<TopBottomWidget> {
           transitionBuilder: (Widget child, Animation<double> animation) {
             return FadeTransition(opacity: animation, child: child);
           },
-          child: selectedItem == 'Top'
+          child: cubit.selectedBeds == 'top'
               ? const TopWidget(key: ValueKey('TopWidget'))
-              : const BottomWidget(key: ValueKey('BottomWidget')),
+              : const BottomWidget(key: ValueKey('bottomWidget')),
         ),
-
-        // AnimatedSwitcher(
-        //   duration: const Duration(milliseconds: 500),
-        //   transitionBuilder: (Widget child, Animation<double> animation) {
-        //     return ScaleTransition(scale: animation, child: child);
-        //   },
-        //   child: selectedItem == 'Top'
-        //       ? const TopWidget(key: ValueKey('TopWidget'))
-        //       : const BottomWidget(key: ValueKey('BottomWidget')),
-        // )
-
-        // AnimatedSwitcher(
-        //   duration: const Duration(milliseconds: 500),
-        //   transitionBuilder: (Widget child, Animation<double> animation) {
-        //     return SizeTransition(sizeFactor: animation, axis: Axis.vertical, child: child);
-        //   },
-        //   child: selectedItem == 'Top'
-        //       ? const TopWidget(key: ValueKey('TopWidget'))
-        //       : const BottomWidget(key: ValueKey('BottomWidget')),
-        // )
       ],
     );
   }

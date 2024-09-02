@@ -21,15 +21,10 @@ void main() async {
 
 
 // logo 
-// Add id unit in collection + model
 // splash screen
-// otp verification
-// seraach Browse 
+// serach Browse 
 // past Reservation
 // reservation
 // loading image
 // loading photos from firebase
-// apple pay ?? andorid  *
-// animation
-// card_swiper
 // Exception internet

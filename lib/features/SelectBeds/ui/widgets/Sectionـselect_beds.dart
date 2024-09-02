@@ -37,6 +37,7 @@ class _SelectRoomState extends State<SelectRoom> {
                 children: [
                   GestureDetector(
                     onTap: () {
+                      BlocProvider.of<SelectBedsCubit>(context).selectRoom('room 1');
                       setState(() {
                         cubit.selectedOption = 0;
                       });
@@ -68,6 +69,7 @@ class _SelectRoomState extends State<SelectRoom> {
                   horizontalSpace(15),
                   GestureDetector(
                     onTap: () {
+                      BlocProvider.of<SelectBedsCubit>(context).selectRoom('room 2');
                       setState(() {
                         cubit.selectedOption = 1;
                       });
@@ -99,6 +101,8 @@ class _SelectRoomState extends State<SelectRoom> {
                   horizontalSpace(15),
                   GestureDetector(
                     onTap: () {
+                      BlocProvider.of<SelectBedsCubit>(context).selectRoom('room 3');
+
                       setState(() {
                         cubit.selectedOption = 2;
                       });
@@ -131,11 +135,6 @@ class _SelectRoomState extends State<SelectRoom> {
               ),
             ],
           ),
-          // cubit.selectedOption == 0
-          //     ? Container()
-          //     : cubit.selectedOption == 1
-          //         ? Container()
-          // : Container(),
         ],
       ),
     );

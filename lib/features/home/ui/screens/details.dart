@@ -1,5 +1,7 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
 import 'package:manzil/core/helpers/spacing.dart';
@@ -11,6 +13,7 @@ import 'package:manzil/features/SelectBeds/logic/cubit/select_beds_cubit.dart';
 import 'package:manzil/features/SelectBeds/ui/screens/select_beds.dart';
 import 'package:manzil/features/home/data/model/unit.dart';
 import 'package:manzil/features/home/ui/widgets/photos.dart';
+import 'package:shimmer/shimmer.dart';
 
 class Details extends StatelessWidget {
   final UnitModle unitList;
@@ -42,6 +45,7 @@ class Details extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   detailsUnit(unitList: unitList, formattedPrice: formattedPrice),
+
                   verticalSpace(12),
                   Container(
                     height: 50,
@@ -304,13 +308,32 @@ class Details extends StatelessWidget {
       children: [
         Align(
           alignment: Alignment.center,
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(10),
-            child: Image.network(
-              '${unitList.img}',
-              width: double.infinity,
-              height: 300,
-              fit: BoxFit.cover,
+          child: CachedNetworkImage(
+            imageUrl: '${unitList.img}',
+            progressIndicatorBuilder: (context, url, downloadProgress) {
+              return Shimmer.fromColors(
+                baseColor: ColorsManager.lightGray,
+                highlightColor: Colors.white,
+                child: Container(
+                  height: 300.h,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(12.0),
+                    color: Colors.white,
+                  ),
+                ),
+              );
+            },
+            imageBuilder: (context, imageProvider) => Container(
+              height: 300.h,
+              decoration: BoxDecoration(
+                shape: BoxShape.rectangle,
+                borderRadius: BorderRadius.circular(12.0),
+                image: DecorationImage(
+                  image: imageProvider,
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
         ),

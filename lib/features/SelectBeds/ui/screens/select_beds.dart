@@ -9,7 +9,6 @@ import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 import 'package:manzil/features/SelectBeds/ui/widgets/Section%D9%80select_beds.dart';
-import 'package:manzil/features/SelectBeds/ui/widgets/bottom_widget.dart';
 import 'package:manzil/features/SelectBeds/ui/widgets/top_bottom_widget.dart';
 
 class SelectBeds extends StatefulWidget {

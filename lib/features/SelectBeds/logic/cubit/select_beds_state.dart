@@ -17,3 +17,15 @@ class ErrorSelectBedsStateState extends SelectBedsState {
 
   ErrorSelectBedsStateState({required this.message});
 }
+
+class SelectRoomState extends SelectBedsState {
+  final String room;
+
+  SelectRoomState({required this.room});
+}
+
+class SelectBedState extends SelectBedsState {
+  final String beds;
+
+  SelectBedState({required this.beds});
+}

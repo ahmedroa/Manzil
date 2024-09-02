@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
 import 'package:manzil/core/helpers/navigate.dart';
 import 'package:manzil/core/helpers/spacing.dart';
@@ -7,6 +9,7 @@ import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
 import 'package:manzil/features/home/data/model/unit.dart';
 import 'package:manzil/features/home/ui/screens/details.dart';
+import 'package:shimmer/shimmer.dart';
 
 class BuildRecommended extends StatelessWidget {
   final UnitModle unitList;
@@ -23,7 +26,7 @@ class BuildRecommended extends StatelessWidget {
       },
       child: Container(
         width: 320,
-        height: 338,
+        height: 350,
         margin: const EdgeInsets.only(right: 10),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -42,21 +45,34 @@ class BuildRecommended extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ClipRRect(
-                borderRadius: const BorderRadius.all(Radius.circular(10)),
-                child: Image.network(
-                  '${unitList.img}',
-                  width: double.infinity,
-                  height: 230,
-                  fit: BoxFit.cover,
+              CachedNetworkImage(
+                imageUrl: '${unitList.img}',
+                progressIndicatorBuilder: (context, url, downloadProgress) {
+                  return Shimmer.fromColors(
+                    baseColor: ColorsManager.lightGray,
+                    highlightColor: Colors.white,
+                    child: Container(
+                      height: 230.h,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.rectangle,
+                        borderRadius: BorderRadius.circular(12.0),
+                        color: Colors.white,
+                      ),
+                    ),
+                  );
+                },
+                imageBuilder: (context, imageProvider) => Container(
+                  height: 230.h,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.rectangle,
+                    borderRadius: BorderRadius.circular(12.0),
+                    image: DecorationImage(
+                      image: imageProvider,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
               ),
-
-              // CachedNetworkImage(
-              //   imageUrl: "http://via.placeholder.com/350x150",
-              //   placeholder: (context, url) => const CircularProgressIndicator(),
-              //   errorWidget: (context, url, error) => const Icon(Icons.error),
-              // ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
