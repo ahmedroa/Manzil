@@ -39,30 +39,36 @@ class _SelectBedsState extends State<SelectBeds> {
           verticalSpace(20),
           totalPrice(),
           verticalSpace(20),
-          MainButton(
-              text: 'Reseve',
-              onTap: () {
-                context.pushNamed(Routes.checkout);
-              }),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20),
+            child: MainButton(
+                text: 'Reseve',
+                onTap: () {
+                  context.pushNamed(Routes.checkout);
+                }),
+          ),
           verticalSpace(40),
         ],
       ),
     );
   }
 
-  Row totalPrice() {
-    return Row(
-      children: [
-        Text(
-          'Total selected bed: 2',
-          style: TextStyles.fon15DarkMedium,
-        ),
-        const Spacer(),
-        Text(
-          '1750 SAR',
-          style: TextStyles.fon15DarkMedium,
-        ),
-      ],
+  Padding totalPrice() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      child: Row(
+        children: [
+          Text(
+            'Total selected bed: 2',
+            style: TextStyles.fon15DarkMedium,
+          ),
+          const Spacer(),
+          Text(
+            '1750 SAR',
+            style: TextStyles.fon15DarkMedium,
+          ),
+        ],
+      ),
     );
   }
 

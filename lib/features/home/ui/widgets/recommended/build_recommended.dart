@@ -25,8 +25,7 @@ class BuildRecommended extends StatelessWidget {
         navigateTo(context, Details(unitList: unitList));
       },
       child: Container(
-        width: 320,
-        height: 350,
+        width: 320.h,
         margin: const EdgeInsets.only(right: 10),
         decoration: BoxDecoration(
           color: Colors.white,

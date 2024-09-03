@@ -126,7 +126,11 @@ class _PaymentOptionsState extends State<PaymentOptions> {
             ],
           ),
         verticalSpace(40),
-        if (cubit.selectedOption == 1 || Platform.isIOS) const ApplePay(),
+        if (cubit.selectedOption == 1)
+          const Padding(
+            padding: EdgeInsets.only(bottom: 20),
+            child: ApplePay(),
+          ),
         if (cubit.selectedOption == 2)
           MainButton(
             text: 'proceed to payment',

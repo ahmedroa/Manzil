@@ -55,6 +55,7 @@ dependencies:
   card_swiper: ^3.0.1
   flutter_native_splash: ^2.4.1
   
+  
  
   freezed: ^2.4.5
   freezed_annotation: ^2.4.1 
@@ -69,7 +70,7 @@ dependencies:
 flutter_launcher_icons:
   # android: "launcher_icon"
   ios: true
-  image_path: "assets/logo.png"
+  image_path: "assets/logoApp.png"
   background_color: "#3A73F2"
   min_sdk_android: 21 # android min sdk min:16, default 2
 

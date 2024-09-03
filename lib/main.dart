@@ -21,10 +21,8 @@ void main() async {
 
 
 // logo 
-// splash screen
 // serach Browse 
 // past Reservation
 // reservation
-// loading image
-// loading photos from firebase
+// loading features from firebase
 // Exception internet

@@ -47,6 +47,7 @@ class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMi
               nearbyYourLocation(context),
               verticalSpace(10),
               const NearbyYourLocationBlocBuilder(),
+              // const RecommendedShimmer(),
               verticalSpace(20)
             ],
           ),
