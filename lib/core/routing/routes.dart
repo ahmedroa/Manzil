@@ -52,7 +52,9 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => SelectBedsCubit()..getBeds(''),
-            child: const SelectBeds(),
+            child: SelectBeds(
+              price: settings.arguments as int,
+            ),
           ),
         );
 

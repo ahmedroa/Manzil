@@ -118,7 +118,9 @@ class NearbyYourLocation extends StatelessWidget {
                       MaterialPageRoute(
                         builder: (context) => BlocProvider(
                           create: (context) => SelectBedsCubit()..getBeds(unitList.id!),
-                          child: const SelectBeds(),
+                          child: SelectBeds(
+                            price: formattedPrice,
+                          ),
                         ),
                       ));
                 },

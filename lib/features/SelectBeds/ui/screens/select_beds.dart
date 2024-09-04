@@ -1,6 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:manzil/core/helpers/extensions.dart';
 import 'package:manzil/core/helpers/spacing.dart';
@@ -10,9 +12,11 @@ import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 import 'package:manzil/core/widgets/icon.dart';
+import 'package:manzil/features/SelectBeds/logic/cubit/select_beds_cubit.dart';
 
 class SelectBeds extends StatefulWidget {
-  const SelectBeds({super.key});
+  final price;
+  const SelectBeds({super.key, required this.price});
 
   @override
   State<SelectBeds> createState() => _SelectBedsState();
@@ -21,6 +25,7 @@ class SelectBeds extends StatefulWidget {
 class _SelectBedsState extends State<SelectBeds> {
   @override
   Widget build(BuildContext context) {
+    var cubit = BlocProvider.of<SelectBedsCubit>(context);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Select Beds'),
@@ -35,7 +40,7 @@ class _SelectBedsState extends State<SelectBeds> {
           housingStatus(),
           const Divider(),
           verticalSpace(20),
-          totalPrice(),
+          totalPrice(cubit),
           verticalSpace(20),
           Padding(
             padding: const EdgeInsets.only(left: 20, right: 20),
@@ -116,20 +121,19 @@ class _SelectBedsState extends State<SelectBeds> {
       ),
     );
   }
-  // const TopBottomWidget(),
 
-  Padding totalPrice() {
+  Padding totalPrice(cubit) {
     return Padding(
       padding: const EdgeInsets.only(left: 20, right: 20),
       child: Row(
         children: [
           Text(
-            'Total selected bed: 2',
+            'Total selected bed:  ${cubit.totalselectedBed}',
             style: TextStyles.fon15DarkMedium,
           ),
           const Spacer(),
           Text(
-            '1750 SAR',
+            '${cubit.totalprice} SAR',
             style: TextStyles.fon15DarkMedium,
           ),
         ],

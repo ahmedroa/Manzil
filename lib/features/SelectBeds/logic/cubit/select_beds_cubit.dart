@@ -8,26 +8,15 @@ class SelectBedsCubit extends Cubit<SelectBedsState> {
   List<SelectBedsModel> selectBeds = [];
 
   SelectBedsCubit() : super(SelectBedsInitialState());
-  bool containerColor = false;
 
-  int selectedOption = 0;
-  String selectedRoom = 'room 1';
-  String selectedBeds = 'bottom';
-
-  void selectRoom(String room) {
-    selectedRoom = room;
-    emit(SelectRoomState(room: room));
-  }
-
-  void selectBed(String beds) {
-    selectedBeds = beds;
-    emit(SelectBedState(beds: beds));
-  }
+  int totalselectedBed = 0;
+  int totalprice = 0;
 
   Future<void> getBeds(String id) async {
+    print(id);
     emit(LoadingSelectBedsStateState());
     try {
-      await FirebaseFirestore.instance.collection('unit').doc(id).collection(selectedRoom).doc('bad').get();
+      await FirebaseFirestore.instance.collection('unit').doc(id).collection('top').doc('M6bPrEy1E5ZzlHDbjrX9').get();
 
       emit(SuccessState());
     } catch (e) {
