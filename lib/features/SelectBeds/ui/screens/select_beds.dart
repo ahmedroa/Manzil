@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:manzil/core/helpers/extensions.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/routing/app_router.dart';
@@ -8,8 +9,7 @@ import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
 import 'package:manzil/core/widgets/goBack.dart';
-import 'package:manzil/features/SelectBeds/ui/widgets/Section%D9%80select_beds.dart';
-import 'package:manzil/features/SelectBeds/ui/widgets/top_bottom_widget.dart';
+import 'package:manzil/core/widgets/icon.dart';
 
 class SelectBeds extends StatefulWidget {
   const SelectBeds({super.key});
@@ -27,12 +27,10 @@ class _SelectBedsState extends State<SelectBeds> {
         leading: goBackWidget(context),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           verticalSpace(20),
-          const SelectRoom(),
-          verticalSpace(30),
-          const TopBottomWidget(),
-          verticalSpace(70),
+          selectRoom(),
           const Spacer(),
           housingStatus(),
           const Divider(),
@@ -52,6 +50,73 @@ class _SelectBedsState extends State<SelectBeds> {
       ),
     );
   }
+
+  Padding selectRoom() {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text('Please select the number of beds\n you want:', style: TextStyles.font20DarkReqular),
+          verticalSpace(20),
+          Text('Top bunk', style: TextStyles.fon16DarkMedium),
+          verticalSpace(20),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(5, (index) {
+                return Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 8),
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    color: ColorsManager.containerColor,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset(
+                      IconsManger.top,
+                      color: ColorsManager.kPrimaryColor,
+                      height: 30,
+                    ),
+                  ),
+                );
+              }),
+            ),
+          ),
+          verticalSpace(40),
+          Text('Bottom bunk', style: TextStyles.fon16DarkMedium),
+          verticalSpace(20),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(5, (index) {
+                return Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 8),
+                  height: 40,
+                  width: 40,
+                  decoration: BoxDecoration(
+                    color: ColorsManager.containerColor,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SvgPicture.asset(
+                      IconsManger.bottom,
+                      color: ColorsManager.kPrimaryColor,
+                      height: 30,
+                    ),
+                  ),
+                );
+              }),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+  // const TopBottomWidget(),
 
   Padding totalPrice() {
     return Padding(

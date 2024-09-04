@@ -76,7 +76,6 @@ class NearbyYourLocation extends StatelessWidget {
             ),
             horizontalSpace(15),
             Flexible(
-              // نستخدم Flexible هنا للسماح للعمود بأخذ المساحة المتاحة دون تجاوز
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -97,7 +96,6 @@ class NearbyYourLocation extends StatelessWidget {
                       ),
                       horizontalSpace(4),
                       Flexible(
-                        // استخدام Flexible هنا أيضاً لتجنب التجاوز
                         child: Text(
                           'Price / per bed',
                           style: TextStyles.fon12GreyRegular,

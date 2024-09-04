@@ -19,6 +19,75 @@ void main() async {
   ));
 }
 
+// void main() {
+//   runApp(MyApp());
+// }
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: PageViewExample(),
+    );
+  }
+}
+
+class PageViewExample extends StatelessWidget {
+  final PageController _pageController = PageController();
+
+  PageViewExample({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('PageView Example'),
+      ),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 300,
+            child: PageView(
+              controller: _pageController,
+              children: <Widget>[
+                Container(
+                  color: Colors.red,
+                  child: const Center(
+                    child: Text(
+                      'Page 1',
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.green,
+                  child: const Center(
+                    child: Text(
+                      'Page 2',
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    ),
+                  ),
+                ),
+                Container(
+                  color: Colors.blue,
+                  child: const Center(
+                    child: Text(
+                      'Page 3',
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 
 // logo 
 // serach Browse 

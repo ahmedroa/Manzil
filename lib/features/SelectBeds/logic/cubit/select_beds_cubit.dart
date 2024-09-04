@@ -8,6 +8,8 @@ class SelectBedsCubit extends Cubit<SelectBedsState> {
   List<SelectBedsModel> selectBeds = [];
 
   SelectBedsCubit() : super(SelectBedsInitialState());
+  bool containerColor = false;
+
   int selectedOption = 0;
   String selectedRoom = 'room 1';
   String selectedBeds = 'bottom';

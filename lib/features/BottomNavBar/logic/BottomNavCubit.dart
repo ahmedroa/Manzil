@@ -22,7 +22,9 @@ class BottomNavCubit extends Cubit<int> {
       child: const Browse(),
     ),
     BlocProvider(
-      create: (context) => ReservationsCubit()..fetcCurrentReservations(),
+      create: (context) => ReservationsCubit()
+        ..fetcCurrentReservations()
+        ..fetcPastReservations(),
       child: const Reservations(),
     ),
     const Setting(),

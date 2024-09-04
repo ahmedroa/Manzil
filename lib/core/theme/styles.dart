@@ -18,6 +18,11 @@ class TextStyles {
     fontWeight: FontWeightHelper.bold,
     color: ColorsManager.kPrimaryColor,
   );
+  static TextStyle font20DarkReqular = const TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeightHelper.regular,
+    color: Colors.black,
+  );
   static TextStyle font14blueSemiBold = const TextStyle(
     fontSize: 14,
     fontWeight: FontWeightHelper.semiBold,
