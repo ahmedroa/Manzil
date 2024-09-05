@@ -113,6 +113,27 @@ class NearbyYourLocation extends StatelessWidget {
                 width: 90,
                 text: 'Reserve',
                 onTap: () {
+                  // FirebaseFirestore.instance
+                  //     .collection('unit')
+                  //     .doc('ryyJDjcvI0zoOWdCFbx6')
+                  //     .collection('allBeds')
+                  //     .doc('bedCondition')
+                  //     .set(
+                  //   {
+                  //     'topOne': 'available',
+                  //     'tobThree': 'available',
+                  //     'topTwo': 'available',
+                  //     'topFour': 'available',
+                  //     'topFive': 'available',
+                  //     'topSix': 'available',
+                  //     'bottomOne': 'available',
+                  //     'bottomThree': 'available',
+                  //     'bottomTwo': 'available',
+                  //     'bottomFour': 'available',
+                  //     'bottomFive': 'available',
+                  //     'bottomSix': 'available',
+                  //   },
+                  // );
                   Navigator.push(
                       context,
                       MaterialPageRoute(

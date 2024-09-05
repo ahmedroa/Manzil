@@ -1,9 +1,8 @@
-// ignore_for_file: deprecated_member_use
+// ignore_for_file: deprecated_member_use, prefer_typing_uninitialized_variables
 
-import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:manzil/core/helpers/extensions.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/routing/app_router.dart';
@@ -11,8 +10,8 @@ import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
 import 'package:manzil/core/widgets/MainButton.dart';
 import 'package:manzil/core/widgets/goBack.dart';
-import 'package:manzil/core/widgets/icon.dart';
 import 'package:manzil/features/SelectBeds/logic/cubit/select_beds_cubit.dart';
+import 'package:manzil/features/SelectBeds/ui/widgets/reservation%D9%80beds.dart';
 
 class SelectBeds extends StatefulWidget {
   final price;
@@ -35,7 +34,7 @@ class _SelectBedsState extends State<SelectBeds> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           verticalSpace(20),
-          selectRoom(),
+          const ReservationBeds(),
           const Spacer(),
           housingStatus(),
           const Divider(),
@@ -51,72 +50,6 @@ class _SelectBedsState extends State<SelectBeds> {
                 }),
           ),
           verticalSpace(40),
-        ],
-      ),
-    );
-  }
-
-  Padding selectRoom() {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text('Please select the number of beds\n you want:', style: TextStyles.font20DarkReqular),
-          verticalSpace(20),
-          Text('Top bunk', style: TextStyles.fon16DarkMedium),
-          verticalSpace(20),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List.generate(5, (index) {
-                return Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 8),
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                    color: ColorsManager.containerColor,
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset(
-                      IconsManger.top,
-                      color: ColorsManager.kPrimaryColor,
-                      height: 30,
-                    ),
-                  ),
-                );
-              }),
-            ),
-          ),
-          verticalSpace(40),
-          Text('Bottom bunk', style: TextStyles.fon16DarkMedium),
-          verticalSpace(20),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List.generate(5, (index) {
-                return Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 8),
-                  height: 40,
-                  width: 40,
-                  decoration: BoxDecoration(
-                    color: ColorsManager.containerColor,
-                    borderRadius: BorderRadius.circular(6),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: SvgPicture.asset(
-                      IconsManger.bottom,
-                      color: ColorsManager.kPrimaryColor,
-                      height: 30,
-                    ),
-                  ),
-                );
-              }),
-            ),
-          ),
         ],
       ),
     );
@@ -164,8 +97,8 @@ class _SelectBedsState extends State<SelectBeds> {
             children: [
               Container(
                 color: ColorsManager.kPrimaryColor,
-                width: 15,
-                height: 15,
+                width: 15.w,
+                height: 15.h,
               ),
               horizontalSpace(10),
               Text(
@@ -179,8 +112,8 @@ class _SelectBedsState extends State<SelectBeds> {
             children: [
               Container(
                 color: ColorsManager.icontGrey,
-                width: 15,
-                height: 15,
+                width: 15.w,
+                height: 15.h,
               ),
               horizontalSpace(10),
               Text(

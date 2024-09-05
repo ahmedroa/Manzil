@@ -1,38 +1,63 @@
 class SelectBedsModel {
-  final bool oneBed;
-  final bool twoBed;
-  final bool threeBed;
-  final bool fourBed;
-  final bool fiveBed;
-  final bool sixBed;
+  final String topOne;
+  final String topTwo;
+  final String topThree;
+  final String topFour;
+  final String topFive;
+  final String topSix;
+  final String bottomOne;
+  final String bottomTwo;
+  final String bottomThree;
+  final String bottomFour;
+  final String bottomFive;
+  final String bottomSix;
 
-  SelectBedsModel(
-      {required this.oneBed,
-      required this.twoBed,
-      required this.threeBed,
-      required this.fourBed,
-      required this.fiveBed,
-      required this.sixBed});
+  SelectBedsModel({
+    required this.topOne,
+    required this.topTwo,
+    required this.topThree,
+    required this.topFour,
+    required this.topFive,
+    required this.topSix,
+    required this.bottomOne,
+    required this.bottomTwo,
+    required this.bottomThree,
+    required this.bottomFour,
+    required this.bottomFive,
+    required this.bottomSix,
+  });
 
   factory SelectBedsModel.fromMap(Map<String, dynamic> map) {
     return SelectBedsModel(
-      oneBed: map['oneBed'],
-      twoBed: map['twoBed'],
-      threeBed: map['threeBed'],
-      fourBed: map['fourBed'],
-      fiveBed: map['fiveBed'],
-      sixBed: map['sixBed'],
+      topOne: map['topOne'],
+      topTwo: map['topTwo'],
+      topThree: map['topThree'],
+      topFour: map['topFour'],
+      topFive: map['topFive'],
+      topSix: map['topSix'],
+      bottomOne: map['bottomOne'],
+      bottomTwo: map['bottomTwo'],
+      bottomThree: map['bottomThree'],
+      bottomFour: map['bottomFour'],
+      bottomFive: map['bottomFive'],
+      bottomSix: map['bottomSix'],
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
-      'oneBed': oneBed,
-      'twoBed': twoBed,
-      'threeBed': threeBed,
-      'fourBed': fourBed,
-      'fiveBed': fiveBed,
-      'sixBed': sixBed,
+      'topOne': topOne,
+      'topTwo': topTwo,
+      'topThree': topThree,
+      'topFour': topFour,
+      'topFive': topFive,
+      'topSix': topSix,
+      'bottomOne': bottomOne,
+      'bottomTwo': bottomTwo,
+      'bottomThree': bottomThree,
+      'bottomFour': bottomFour,
+      'bottomFive': bottomFive,
+      'bottomSix': bottomSix,
     };
   }
 }

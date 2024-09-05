@@ -4,7 +4,7 @@ abstract class SelectBedsState {}
 
 class SelectBedsInitialState extends SelectBedsState {}
 
-class SuccessState extends SelectBedsState {}
+class SuccessGetAllBedsState extends SelectBedsState {}
 
 class LoadingSelectBedsStateState extends SelectBedsState {}
 
