@@ -35,3 +35,46 @@ class BrowesDetailsBlocBuilder extends StatelessWidget {
     );
   }
 }
+
+
+
+
+
+
+// class BrowesDetailsBlocBuilder extends StatelessWidget {
+//   const BrowesDetailsBlocBuilder({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return BlocBuilder<HomeCubit, HomeState>(
+//       builder: (context, state) {
+//         if (state is HomeInitialState) {
+//           return const RecommendedShimmer();
+//         } else if (state is SuccessRecommendedState) {
+//           return NotificationListener<ScrollNotification>(
+//             onNotification: (ScrollNotification scrollInfo) {
+//               if (scrollInfo.metrics.pixels == scrollInfo.metrics.maxScrollExtent) {
+//                 context.read<HomeCubit>().fetchUnits();
+//               }
+//               return false;
+//             },
+//             child: ListView.separated(
+//               shrinkWrap: true,
+//               physics: const ScrollPhysics(),
+//               separatorBuilder: (context, index) => verticalSpace(15),
+//               itemCount: state.units.length,
+//               itemBuilder: (context, index) {
+//                 final unit = state.units[index];
+//                 return BuildUnit(unitList: unit);
+//               },
+//             ),
+//           );
+//         } else if (state is ErrorRecommendedState) {
+//           return Center(child: Text('Error: ${state.message}'));
+//         } else {
+//           return const Center(child: Text('Unknown state'));
+//         }
+//       },
+//     );
+//   }
+// }
