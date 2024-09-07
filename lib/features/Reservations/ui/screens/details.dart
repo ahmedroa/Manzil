@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
-import 'package:manzil/core/widgets/MainButton.dart';
+import 'package:manzil/core/widgets/main_button.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 import 'package:manzil/core/widgets/icon.dart';
 
@@ -54,7 +54,7 @@ class DetailsReservations extends StatelessWidget {
                         Text('Number of reservations', style: TextStyles.fon10GreyRegular),
                         Row(
                           children: [
-                            Text('#1295043666 ', style: TextStyles.fon12DarkMedium),
+                            Text('#1295043666 ', style: TextStyles.font12DarkMedium),
                             const Icon(
                               Icons.copy,
                               color: ColorsManager.kPrimaryColor,

@@ -6,7 +6,7 @@ import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/routing/app_router.dart';
 import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
-import 'package:manzil/core/widgets/MainButton.dart';
+import 'package:manzil/core/widgets/main_button.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 import 'package:manzil/core/widgets/icon.dart';
 import 'package:manzil/features/auth/logic/auth_cubit.dart';

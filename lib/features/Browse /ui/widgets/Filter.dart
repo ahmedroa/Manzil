@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/styles.dart';
-import 'package:manzil/core/widgets/MainButton.dart';
+import 'package:manzil/core/widgets/main_button.dart';
 
 class FilterBrowse extends StatefulWidget {
   const FilterBrowse({super.key});
@@ -33,7 +33,7 @@ class _FilterBrowseState extends State<FilterBrowse> {
               verticalSpace(10),
               // SvgPicture.asset(MyIcons.indicator),
               verticalSpace(20),
-              Text('City', style: TextStyles.fon18DarkMedium),
+              Text('City', style: TextStyles.font18DarkMedium),
               verticalSpace(10),
               Row(
                 children: [
@@ -80,7 +80,7 @@ class _FilterBrowseState extends State<FilterBrowse> {
               ),
               verticalSpace(10),
               const Divider(),
-              Text('Location', style: TextStyles.fon18DarkMedium),
+              Text('Location', style: TextStyles.font18DarkMedium),
               verticalSpace(10),
 
               Row(
@@ -107,7 +107,7 @@ class _FilterBrowseState extends State<FilterBrowse> {
               const Divider(),
               verticalSpace(10),
 
-              Text('number of beds available', style: TextStyles.fon18DarkMedium),
+              Text('number of beds available', style: TextStyles.font18DarkMedium),
               verticalSpace(10),
               Row(children: [
                 buildItem(

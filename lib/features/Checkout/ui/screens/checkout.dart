@@ -70,7 +70,7 @@ class _CheckoutState extends State<Checkout> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         verticalSpace(5),
-                        Text('check-in', style: TextStyles.fon12DarkRegular),
+                        Text('check-in', style: TextStyles.font12DarkRegular),
                         Text('1/7/2024', style: TextStyles.fon14DarkMedium),
                       ],
                     ),
@@ -92,7 +92,7 @@ class _CheckoutState extends State<Checkout> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         verticalSpace(5),
-                        Text('check-in', style: TextStyles.fon12DarkRegular),
+                        Text('check-in', style: TextStyles.font12DarkRegular),
                         Text('1/7/2024', style: TextStyles.fon14DarkMedium),
                       ],
                     ),
@@ -119,7 +119,7 @@ class _CheckoutState extends State<Checkout> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   verticalSpace(5),
-                  Text('Number Of Beds', style: TextStyles.fon12DarkRegular),
+                  Text('Number Of Beds', style: TextStyles.font12DarkRegular),
                   Text('4', style: TextStyles.fon14DarkMedium),
                 ],
               ),
@@ -141,7 +141,7 @@ class _CheckoutState extends State<Checkout> {
             ),
             Text(
               'Alryan, Riyadh Saudi Arabia',
-              style: TextStyles.fon12DarkRegular,
+              style: TextStyles.font12DarkRegular,
             ),
           ],
         ),

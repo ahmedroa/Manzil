@@ -7,7 +7,6 @@ import 'package:manzil/features/home/ui/screens/Browse/Browse.dart';
 import 'package:manzil/features/home/ui/screens/home.dart';
 import 'package:manzil/features/setting/ui/screens/Setting.dart';
 
-// Bottom Navigation Bar Cubit
 class BottomNavCubit extends Cubit<int> {
   BottomNavCubit() : super(0);
   static BottomNavCubit get(BuildContext context) => BlocProvider.of(context);

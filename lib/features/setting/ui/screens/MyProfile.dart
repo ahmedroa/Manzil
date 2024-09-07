@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/styles.dart';
-import 'package:manzil/core/widgets/AppTextFormField.dart';
+import 'package:manzil/core/widgets/app_text_form_field.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 
 class MyProfile extends StatelessWidget {

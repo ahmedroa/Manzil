@@ -7,7 +7,7 @@ import 'package:manzil/core/helpers/navigate.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
-import 'package:manzil/core/widgets/MainButton.dart';
+import 'package:manzil/core/widgets/main_button.dart';
 import 'package:manzil/features/SelectBeds/logic/cubit/select_beds_cubit.dart';
 import 'package:manzil/features/SelectBeds/ui/screens/select_beds.dart';
 import 'package:manzil/features/home/data/model/unit.dart';

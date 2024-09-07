@@ -21,10 +21,6 @@ void main() async {
 
 
 
-// logo 
 // serach Browse 
 // past Reservation
 // reservation
-// loading features from firebase
-// Exception internet
-// get data 2 doc from firebase

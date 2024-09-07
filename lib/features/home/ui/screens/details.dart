@@ -7,7 +7,7 @@ import 'package:intl/intl.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
-import 'package:manzil/core/widgets/MainButton.dart';
+import 'package:manzil/core/widgets/main_button.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 import 'package:manzil/features/SelectBeds/logic/cubit/select_beds_cubit.dart';
 import 'package:manzil/features/SelectBeds/ui/screens/select_beds.dart';
@@ -30,7 +30,7 @@ class Details extends StatelessWidget {
         leading: goBackWidget(context),
         title: Text(
           'Details',
-          style: TextStyles.fon18DarkMedium,
+          style: TextStyles.font18DarkMedium,
         ),
       ),
       backgroundColor: Colors.white,
@@ -71,7 +71,7 @@ class Details extends StatelessWidget {
                                   horizontalSpace(5),
                                   Text(
                                     '1 Bed',
-                                    style: TextStyles.fon12DarkRegular,
+                                    style: TextStyles.font12DarkRegular,
                                   ),
                                 ],
                               ),
@@ -93,7 +93,7 @@ class Details extends StatelessWidget {
                                   horizontalSpace(5),
                                   Text(
                                     '1 Bath',
-                                    style: TextStyles.fon12DarkRegular,
+                                    style: TextStyles.font12DarkRegular,
                                   ),
                                 ],
                               ),
@@ -115,7 +115,7 @@ class Details extends StatelessWidget {
                                   horizontalSpace(5),
                                   Text(
                                     '325 sqm',
-                                    style: TextStyles.fon12DarkRegular,
+                                    style: TextStyles.font12DarkRegular,
                                   ),
                                 ],
                               ),
@@ -362,11 +362,11 @@ class Details extends StatelessWidget {
         verticalSpace(4),
         Row(
           children: [
-            Text(formattedPrice, style: TextStyles.fon18DarkMedium),
+            Text(formattedPrice, style: TextStyles.font18DarkMedium),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('SAR', style: TextStyles.fon10DarkRegular),
+                Text('SAR', style: TextStyles.font10DarkRegular),
                 Text('+ 261 SAR For VAT and processing fees', style: TextStyles.fon8GreyRegular),
               ],
             )

@@ -2,7 +2,6 @@
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-
 import 'package:manzil/features/home/data/model/unit.dart';
 import 'package:manzil/features/home/logic/cubit/home_state.dart';
 

@@ -59,7 +59,7 @@ class CurrentReservations extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text('Number of reservations', style: TextStyles.fon10GreyRegular),
-                      Text('${reservationList.numberOfReservations}', style: TextStyles.fon12DarkMedium),
+                      Text('${reservationList.numberOfReservations}', style: TextStyles.font12DarkMedium),
                       Text('Unit', style: TextStyles.fon12GreyRegular),
                       Text(reservationList.unit, style: TextStyles.fon14DarkMedium),
                       Text('Number Of Beds', style: TextStyles.fon12GreyRegular),

@@ -19,20 +19,3 @@ class ErrorRecommendedState extends HomeState {
 
   ErrorRecommendedState({required this.message});
 }
-
-
-
-
-// @freezed
-// class HomeState<T> with _$HomeState<T> {
-//   const factory HomeState.initial(int index) = _Initial;
-
-//   const factory HomeState.index(int index) = _Index;
-
-//   const factory HomeState.loading() = _Loading;
-
-//   const factory HomeState.success(T data) = _Success<T>;
-
-//   const factory HomeState.error(String message) = _Error;
-// }
-

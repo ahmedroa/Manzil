@@ -17,6 +17,11 @@ class RecommendedBlocBuilder extends StatelessWidget {
         if (state is HomeInitialState) {
           return const RecommendedShimmer();
         } else if (state is SuccessRecommendedState) {
+          if (state.units.isEmpty) {
+            return const Center(
+              child: Text('No recommended units available'),
+            );
+          }
           return LayoutBuilder(
             builder: (context, constraints) {
               int itemCount = 2;

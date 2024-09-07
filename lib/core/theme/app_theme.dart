@@ -10,9 +10,5 @@ ThemeData lightTheme = ThemeData(
     surfaceTintColor: Colors.white,
     backgroundColor: Colors.white,
     elevation: 0,
-    // systemOverlayStyle: SystemUiOverlayStyle(
-    //   statusBarColor: ColorsManager.,
-    //   statusBarIconBrightness: Brightness.dark,
-    // ),
   ),
 );

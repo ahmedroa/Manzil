@@ -62,7 +62,7 @@ Row recommendedForYouSeeAll(BuildContext context) {
     children: [
       Text(
         'Recommended for you',
-        style: TextStyles.fon18DarkMedium,
+        style: TextStyles.font18DarkMedium,
       ),
       const Spacer(),
       GestureDetector(
@@ -83,7 +83,7 @@ Row nearbyYourLocation(BuildContext context) {
     children: [
       Text(
         'Nearby your location',
-        style: TextStyles.fon18DarkMedium,
+        style: TextStyles.font18DarkMedium,
       ),
       const Spacer(),
       GestureDetector(

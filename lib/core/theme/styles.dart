@@ -28,23 +28,23 @@ class TextStyles {
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.kPrimaryColor,
   );
-  static TextStyle fon10DarkRegular = const TextStyle(
+  static TextStyle font10DarkRegular = const TextStyle(
     fontSize: 10,
     fontWeight: FontWeightHelper.regular,
     color: Colors.black,
   );
-  static TextStyle fon12DarkRegular = const TextStyle(
+  static TextStyle font12DarkRegular = const TextStyle(
     fontSize: 12,
     fontWeight: FontWeightHelper.regular,
     color: Colors.black,
   );
-  static TextStyle fon12DarkMedium = const TextStyle(
+  static TextStyle font12DarkMedium = const TextStyle(
     fontSize: 12,
     fontWeight: FontWeightHelper.medium,
     color: Colors.black,
   );
 
-  static TextStyle fon18DarkMedium = const TextStyle(
+  static TextStyle font18DarkMedium = const TextStyle(
     fontSize: 18,
     fontWeight: FontWeightHelper.medium,
     color: Colors.black,

@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manzil/features/auth/logic/bloc_state.dart';
 
@@ -7,9 +6,6 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
   late String verificationId;
 
   PhoneAuthCubit() : super(PhoneAuthInitial());
-  int? phoneNumber;
-  TextEditingController phoneNumberController = TextEditingController();
-  final formKey = GlobalKey<FormState>();
 
   Future<void> submitPhoneNumber(String phoneNumber) async {
     emit(Loading());

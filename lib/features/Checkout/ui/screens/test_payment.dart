@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:manzil/core/helpers/navigate.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/styles.dart';
-import 'package:manzil/core/widgets/AppTextFormField.dart';
-import 'package:manzil/core/widgets/MainButton.dart';
+import 'package:manzil/core/widgets/app_text_form_field.dart';
+import 'package:manzil/core/widgets/main_button.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 import 'package:manzil/features/Checkout/ui/screens/payment_successful.dart';
 

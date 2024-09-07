@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
-import 'package:manzil/core/widgets/MainButton.dart';
+import 'package:manzil/core/widgets/main_button.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 import 'package:manzil/core/widgets/icon.dart';
 import 'package:manzil/features/Checkout/ui/widget/VAT.dart';
