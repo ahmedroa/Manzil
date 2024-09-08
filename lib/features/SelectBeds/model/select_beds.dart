@@ -29,18 +29,18 @@ class SelectBedsModel {
 
   factory SelectBedsModel.fromMap(Map<String, dynamic> map) {
     return SelectBedsModel(
-      topOne: map['topOne'],
-      topTwo: map['topTwo'],
-      topThree: map['topThree'],
-      topFour: map['topFour'],
-      topFive: map['topFive'],
-      topSix: map['topSix'],
-      bottomOne: map['bottomOne'],
-      bottomTwo: map['bottomTwo'],
-      bottomThree: map['bottomThree'],
-      bottomFour: map['bottomFour'],
-      bottomFive: map['bottomFive'],
-      bottomSix: map['bottomSix'],
+      topOne: map['topOne'] ?? '',
+      topTwo: map['topTwo'] ?? '',
+      topThree: map['topThree'] ?? '',
+      topFour: map['topFour'] ?? '',
+      topFive: map['topFive'] ?? '',
+      topSix: map['topSix'] ?? '',
+      bottomOne: map['bottomOne'] ?? '',
+      bottomTwo: map['bottomTwo'] ?? '',
+      bottomThree: map['bottomThree'] ?? '',
+      bottomFour: map['bottomFour'] ?? '',
+      bottomFive: map['bottomFive'] ?? '',
+      bottomSix: map['bottomSix'] ?? '',
     );
   }
 

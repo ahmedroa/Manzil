@@ -54,6 +54,7 @@ class AppRouter {
             create: (context) => SelectBedsCubit()..getBeds(''),
             child: SelectBeds(
               price: settings.arguments as int,
+              unitId: settings.arguments as String,
             ),
           ),
         );

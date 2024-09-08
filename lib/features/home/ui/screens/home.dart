@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manzil/core/helpers/spacing.dart';
@@ -31,6 +33,18 @@ class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMi
           color: ColorsManager.kPrimaryColor,
           width: 190,
         ),
+        leading: IconButton(
+            onPressed: () {
+              FirebaseFirestore.instance.collection('unit').doc('ryyJDjcvI0zoOWdCFbx6').collection('top').add({
+                '1': 'available',
+                '2': 'available',
+                '3': 'available',
+                '4': 'not available',
+                '5': 'available',
+                '6': 'available',
+              });
+            },
+            icon: const Icon(Icons.menu)),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 12, right: 12),

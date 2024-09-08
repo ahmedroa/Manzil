@@ -131,9 +131,10 @@ class BuildRecommended extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => BlocProvider(
-                                      create: (context) => SelectBedsCubit()..getBeds(unitList.id!),
+                                      create: (context) => SelectBedsCubit()..fetchUnits(''),
                                       child: SelectBeds(
                                         price: formattedPrice,
+                                        unitId: "${unitList.id}",
                                       ),
                                     ),
                                   ));

@@ -3,11 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:manzil/core/helpers/extensions.dart';
 import 'package:manzil/core/helpers/spacing.dart';
 import 'package:manzil/core/routing/app_router.dart';
 import 'package:manzil/core/theme/colors.dart';
 import 'package:manzil/core/theme/styles.dart';
+import 'package:manzil/core/widgets/icon.dart';
 import 'package:manzil/core/widgets/main_button.dart';
 import 'package:manzil/core/widgets/goBack.dart';
 import 'package:manzil/features/SelectBeds/logic/cubit/select_beds_cubit.dart';
@@ -15,7 +17,8 @@ import 'package:manzil/features/SelectBeds/ui/widgets/reservation%D9%80beds.dart
 
 class SelectBeds extends StatefulWidget {
   final price;
-  const SelectBeds({super.key, required this.price});
+  final String unitId;
+  const SelectBeds({super.key, required this.price, required this.unitId});
 
   @override
   State<SelectBeds> createState() => _SelectBedsState();
@@ -34,7 +37,9 @@ class _SelectBedsState extends State<SelectBeds> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           verticalSpace(20),
-          const ReservationBeds(),
+          ReservationBeds(
+            unitId: widget.unitId,
+          ),
           const Spacer(),
           housingStatus(),
           const Divider(),
